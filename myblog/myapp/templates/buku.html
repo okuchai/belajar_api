@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block judul %} Data Buku {% endblock judul %}
+
+{% block isi %}
+<div class="content-wrapper">
+    <section class="content">
+        <div class="table-responsive">
+            <table id="example2" class="table table-bordered table-striped">
+            {% comment %} <table class="table table-primary"> {% endcomment %}
+                <thead>
+                    <tr>
+                        <th scope="col">Judul</th>
+                        <th scope="col">Penulis</th>
+                        <th scope="col">penerbit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for buku in data_buku  %}
+                    <tr class="">
+                        <td scope="row">{{buku.title}}</td>
+                        <td>{{buku.author}}</td>
+                        <td>{{buku.publisher}}</td>
+                    </tr>
+                {% endfor %}    
+                </tbody>
+            </table>
+        </div>
+        
+    </section>
+</div>        
+
+{% endblock isi %}
